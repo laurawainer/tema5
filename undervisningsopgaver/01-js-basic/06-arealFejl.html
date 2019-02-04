@@ -12,13 +12,10 @@
 
 					let længde = prompt("angiv længde");
 					let bredde = prompt("angiv bredde");
+					let areal = længde * bredde;
+					console.log(areal);
 
-					function areal (l, b){
-						return (l * b);
-					}
-
-
-				let resultat = `Arealet er ${areal(længde, bredde)}. Har du brug for et ny areal?`;
+				let resultat = `Arealet er ${areal}. Har du brug for et ny areal?`;
 
 					confirm(resultat);
 
