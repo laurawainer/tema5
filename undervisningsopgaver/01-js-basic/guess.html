@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title></title>
+				<link rel="stylesheet" href="">
+</head>
+
+<body>
+				<script>
+	      let point = 0;
+        let spørgsmål1 = "Er en hund større end en elefant?";
+        let spørgsmål2 = "Er jorden rund?";
+        let spørgsmål3 = "Kommer februar før januar?";
+        let spørgsmål4 = "Kan man gå på vandet?";
+        let spørgsmål5 = "Er det lovligt at lave billeddeling?";
+
+        if (confirm(spørgsmål1)) {
+            point--;
+        } else {
+            point++;
+        }
+
+        if (confirm(spørgsmål2)) {
+            point++;
+        } else {
+            point--;
+        }
+
+        if (confirm(spørgsmål3)) {
+            point--;
+        } else {
+            point++;
+        }
+
+        if (confirm(spørgsmål4)) {
+            point--;
+        } else {
+            point++;
+        }
+
+        if (confirm(spørgsmål5)) {
+            point--;
+        } else {
+            point++;
+        }
+        alert(`din pointscorer er ${point}`);
+
+        if (confirm) {
+            location.reload();
+        }
+				</script>
+</body>
+</html>
