@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personliste</title>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: darkgrey;
+        }
+
+        #retter {
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 1vw;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .ret {
+            border: 1px solid black;
+            background-color: white;
+            text-align: center;
+            margin: 1vw;
+            padding: 5px;
+        }
+
+        header {
+            padding: 25px;
+            text-align: center;
+            background-color: orange;
+        }
+
+        @media only screen and (min-width:500px) {
+            #retter {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media only screen and (min-width:800px) {
+            #retter {
+                grid-template-columns: auto auto auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1 id="logo">Bistro Babushka</h1>
+        <nav id="menu">
+            <button>Alle</button>
+            <button>Forretter</button>
+            <button>Hovedretter</button>
+            <button>Desserter</button>
+        </nav>
+    </header>
+    <main>
+        <section id="retter"></section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let retter;
+        let dest = document.querySelector("#retter");
+
+        async function start() {
+            const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
+            retter = await myJson.json();
+            visRetter();
+        }
+
+        function visRetter() {
+            dest.innerHTML = "";
+            retter.forEach(ret => {
+                dest.innerHTML += `
+                    <article class="ret">
+                        <img src=imgs/small/${ret.billede}-sm.jpg alt=${ret.navn}>
+                        <h2>${ret.navn}</h2>
+                        <p>${ret.kort}</p>
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+            })
+        }
+    </script>
+
+
+</body>
+
+</html>
