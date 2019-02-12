@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babushka</title>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: darkgrey;
+        }
+
+        #retter {
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 1vw;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .ret {
+            border: none;
+            background-color: white;
+            text-align: center;
+            margin: 1vw;
+            padding: 10px;
+        }
+
+        header {
+            padding: 25px;
+            text-align: center;
+            background-color: orange;
+        }
+
+		button {
+			background: none;
+			border: none;
+			font-size: 18px;
+
+		}
+
+		#popup {
+			top: 0;
+			width: 100vw;
+			height: 100vw;
+			background-color: white
+			position: fixed;
+			display: none;
+			overflow: scroll;
+
+		}
+
+		#indhold {
+			min-height: 50vh;
+			background-color: white;
+			width: 70vw;
+			margin: 4rem auto;
+		}
+
+		#luk {
+			position: fixed;
+			right: 2rem;
+		}
+
+		#luk button {
+			font-size: 2rem;
+			padding: 1rem 2rem;
+		}
+
+		button:hover {
+text-decoration: underline;		}
+
+        @media only screen and (min-width:500px) {
+            #retter {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media only screen and (min-width:800px) {
+            #retter {
+                grid-template-columns: auto auto auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="popup">
+    	<div id="luk">
+    		<button>X</button>
+    	</div>
+    	<div id="indhold"></div>
+    </div>
+
+    <header>
+        <h1 id="logo">Bistro Babushka</h1>
+        <nav id="menu">
+            <button class="filter valgt" data-ret="alle">Alle</button>
+            <button class="filter" data-ret="forretter">Forretter</button>
+            <button class="filter" data-ret="hovedretter">Hovedretter</button>
+            <button class="filter" data-ret="desserter">Desserter</button>
+        </nav>
+    </header>
+
+
+    <main>
+        <section id="retter"></section>
+    </main>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        let retter;
+        let dest = document.querySelector("#retter");
+        let filter = "alle";
+
+        async function start() {
+            const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
+            retter = await myJson.json();
+            visRetter();
+        }
+
+        function visRetter() {
+            dest.innerHTML = "";
+            retter.forEach(ret => {
+                if (filter == "alle" || filter == ret.kategori) {
+                    let template = `
+                    <article class="ret">
+                        <img src=imgs/small/${ret.billede}-sm.jpg alt=${ret.navn}>
+                        <h2>${ret.navn}</h2>
+                        <p>${ret.kort}</p>
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+
+
+                    dest.insertAdjacentHTML("beforeend", template);
+					dest.lastElementChild.addEventListener("click", visSingle);
+
+					function visSingle() {
+						document.querySelector("#indhold").innerHTML =
+
+							`<article class="ret">
+                        <img src=imgs/small/${ret.billede}-sm.jpg alt=${ret.navn}>
+                        <h2>${ret.navn}</h2>
+                        <p>${ret.kort}</p>
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+						document.querySelector("#popup").style.display = "block";
+						document.querySelector("#popup #luk").addEventListener("click", close);
+					}
+
+
+                    function close() {
+                        document.querySelector("#popup").style.display = "none"
+                    }
+
+                }
+            })
+        }
+
+
+        start();
+
+        document.querySelectorAll(".filter").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+
+
+        function filtrering() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            filter = this.getAttribute("data-ret");
+
+            visRetter();
+        }
+    </script>
+
+
+</body>
+
+</html>
