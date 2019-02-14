@@ -18,7 +18,6 @@
             grid-template-columns: auto;
             grid-gap: 1vw;
             max-width: 1000px;
-            margin: 0 auto;
         }
         img {
             width: 100%;
@@ -43,44 +42,42 @@
 			border: none;
 			font-size: 18px;
         }
-
-		button:hover{
-			text-decoration: underline;
-		}
-
         .valgt {
 text-decoration: line-through;        }
-        #popup {
-            top: 0;
+
+        #single {
             width: 100vw;
             height: 100vh;
             position: fixed;
-            background-color: hsla(0, 15%, 48%, 0.5);
-            display: none;
+            top: 2rem;
+
             overflow: scroll;
-        }
-        #indhold {
-            min-height: 50vh;
-            background-color: white;
-            width: 70vw;
-            margin: 4rem auto;
         }
         #luk {
             position: fixed;
-            right: 2rem;
+            right: 1.5rem;
+            top: 2.5rem;
         }
         #luk button {
             font-size: 2rem;
-            padding: 1rem 2rem;
+            padding: 0.2rem;
         }
         @media only screen and (min-width: 500px) {
             #retter {
                 grid-template-columns: auto auto;
             }
+            #luk button {
+                padding: 0.5rem 1rem;
+            }
+            #luk {
+                right: 3rem;
+                top: 2.3rem;
+            }
         }
         @media only screen and (min-width:800px) {
             #retter {
                 grid-template-columns: auto auto auto;
+                margin: 2rem 1rem 1rem 25rem;
             }
         }
     </style>
@@ -89,21 +86,17 @@ text-decoration: line-through;        }
 
 <body>
 
-    <div id="popup">
+    <div id="single">
         <div id="luk">
-            <button>X</button>
+            <button>
+                ⇦ </button> </div>
+        <div id="indhold">
         </div>
-        <div id="indhold"></div>
     </div>
 
     <header>
         <h1 id="logo">Bistro Babushka</h1>
-        <nav id="menu">
-            <button class="filter valgt" data-ret="alle">Alle</button>
-            <button class="filter" data-ret="forretter">Forretter</button>
-            <button class="filter" data-ret="hovedretter">Hovedretter</button>
-            <button class="filter" data-ret="desserter">Desserter</button>
-        </nav>
+
     </header>
 
 
@@ -116,20 +109,23 @@ text-decoration: line-through;        }
 
     <script>
         document.addEventListener("DOMContentLoaded", start);
+        let urlParams = new URLSearchParams(window.location.search);
+        let retId = urlParams.get("id");
         let retter;
         let dest = document.querySelector("#retter");
         let filter = "alle";
-        // Her henter jeg alt den info via linker som jeg skal bruger, og beder den om at await 2 gange, så jeg er sikker på den får det hele med, og bagefter referere til funktionen visRetter.
+
         async function start() {
             const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
             retter = await myJson.json();
             visRetter();
         }
-        // Her får jeg smidt de forskellige informationer ind som jeg skal bruge, opstillet i grit. Jeg kan hente de forskellige info, fordi jeg har smidt linket foroven ind.
+
         function visRetter() {
             dest.innerHTML = "";
             retter.forEach(ret => {
-                if (filter == "alle" || filter == ret.kategori) {
+                if (ret.id == retId) {
+                    console.log(ret);
                     let template = `
                     <article class="ret">
                         <img src=imgs/small/${ret.billede}-sm.jpg alt=${ret.navn}>
@@ -138,27 +134,11 @@ text-decoration: line-through;        }
                         <p>${ret.pris}kr.</p>
                     </article>`;
                     dest.insertAdjacentHTML("beforeend", template);
-                    dest.lastElementChild.addEventListener("click", () => {
-                        location.href = "single.html?id=" + ret.id;
-                    });
-                    //                    function close() {
-                    //                        document.querySelector("#popup").style.display = "none"
-                    //                    }
+                    document.querySelector("#luk button").addEventListener("click", () => {
+                        location.href = "forside2.html";
+                    })
                 }
             })
-        }
-        start();
-        document.querySelectorAll(".filter").forEach(elm => {
-            elm.addEventListener("click", filtrering);
-        })
-        // Min funktion til at filtrere hvor jeg beder den om at fjerne mit markerede "valgt og tilføje det til den som bliver "valgt".
-        function filtrering() {
-            document.querySelectorAll(".filter").forEach(elm => {
-                elm.classList.remove("valgt");
-            })
-            this.classList.add("valgt");
-            filter = this.getAttribute("data-ret");
-            visRetter();
         }
     </script>
 
