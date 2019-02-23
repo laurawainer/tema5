@@ -49,137 +49,96 @@
         "pris": "99",
         "kategori": "lunch"
     }, {
-        "navn": "Chicken Tikka Masala",
+        "navn": "Norwegian toast",
         "billede": "lunch2",
-        "kort": "Kyllingebryst tilberedt i tandooriovn serveret i masala sovs.",
+        "kort": "Our freshky baked sourdough with delicious norwegian salmon, egg amd avo.",
         "lang": "",
         "pris": "115",
         "kategori": "lunch"
     }, {
-        "navn": "Shahjani Curry",
+        "navn": "Marrakech plate",
         "billede": "lunch3",
-        "kort": "Kokkens egen opskrift på kylling i karry.",
+        "kort": "This plate is full of everything you could possible wish for on a trip to Marrakech. it contains creamy hummous, fallafel, avo and much more...",
         "lang": "",
         "pris": "99",
         "kategori": "lunch"
     }, {
-        "navn": "Butter Chicken",
+        "navn": "Baked salmon",
         "billede": "lunch4",
-        "kort": "Kylling smørstegt i tandooriovn tilberedt med orientalske krydderier samt tomater.",
+        "kort": "This baked salmon on a salad with bulgur wheat is a customer favorite.",
         "lang": "",
         "pris": "110",
         "kategori": "lunch"
     }, {
-        "navn": "Nawabi Murgh",
+        "navn": "Salmon'n'eggs",
         "billede": "lunch5",
-        "kort": "Muglai specialitet, udbenet kylling i krydret karry serveret med hakket kød og nødder.",
+        "kort": "The perfect way too eat more fish, our delicous dish with local greens, eggs and norwegian salmon.",
         "lang": "",
         "pris": "109",
         "kategori": "lunch"
     }, {
-        "navn": "Saag Chicken",
+        "navn": "Fallafel salad",
         "billede": "lunch6",
-        "kort": "Udbenede kyllingestykker tilberedt i karry med spinat.",
+        "kort": "A colorful salad with the best vegstables from local farmers and a creamy falaffel.",
         "lang": "",
         "pris": "129",
         "kategori": "lunch"
     }, {
-        "navn": "Chicken Biryani",
-        "billede": "chicken-tikka-biryani",
-        "kort": "Ris blandet med kylling á la mughali.",
+        "navn": "Strawberry and cream favorite",
+        "billede": "sweets1",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.",
+        "lang": "",
+        "pris": "65",
+        "kategori": "Sweets"
+    }, {
+        "navn": "Chocolate bombs",
+        "billede": "sweets2",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.",
+        "lang": "",
+        "pris": "65",
+        "kategori": "sweets"
+    }, {
+        "navn": "Pistachio cake",
+        "billede": "sweets3",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.",
+        "lang": "",
+        "pris": "65",
+        "kategori": "sweets"
+    }, {
+        "navn": "Chocolate and popcorn cake",
+        "billede": "sweets4",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.",
+        "lang": "",
+        "pris": "65",
+        "kategori": "sweets"
+    }, {
+        "navn": "Strawberry cake",
+        "billede": "sweets5",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.,
+        "lang": "",
+        "pris": "65",
+        "kategori": "sweets"
+    }, {
+        "navn": "Custard cream with homemade crackers ",
+        "billede": "sweets6",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.",
         "lang": "",
         "pris": "99",
-        "kategori": "kylling"
+        "kategori": "sweets"
     }, {
-        "navn": "Champ Tandoori",
-        "billede": "tandoori-champ",
-        "kort": "Specialtilberedte indiske lammekoteletter.",
+        "navn": "Banana muffin",
+        "billede": "sweets7",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.",
         "lang": "",
-        "pris": "135",
-        "kategori": "lam"
+        "pris": "45",
+        "kategori": "sweets"
     }, {
-        "navn": "Rogan Josh",
-        "billede": "rogan-josh",
-        "kort": "Lammekød i kraftig krydret karry.",
+
+        "navn": "Paris briest",
+        "billede": "sweets9",
+        "kort": "All our beautiful and tasty sweets are freshly baked in our own bakery daily. Ask for allegies.",
         "lang": "",
-        "pris": "105",
-        "kategori": "lam"
-    }, {
-        "navn": "Shahi Korma Lahori",
-        "billede": "shahi-korma-lahori",
-        "kort": "Små stykker af udbenet lammekød i mild karry.",
-        "lang": "",
-        "pris": "105",
-        "kategori": "lam"
-    }, {
-        "navn": "Mutten Do Piaza",
-        "billede": "mutten-do-piaza",
-        "kort": "Kokkens egen opskrift på krydret lammekød.",
-        "lang": "",
-        "pris": "105",
-        "kategori": "lam"
-    }, {
-        "navn": "Keema Matter",
-        "billede": "keema-matter",
-        "kort": "Hakket kød med ærter.",
-        "lang": "",
-        "pris": "105",
-        "kategori": "lam"
-    }, {
-        "navn": "Raita",
-        "billede": "raita",
-        "kort": "Agurk og tomat blandet i kærnet yoghurt.",
-        "lang": "",
-        "pris": "35",
-        "kategori": "vegetar"
-    }, {
-        "navn": "Daal",
-        "billede": "daal",
-        "kort": "Kokkens specialitet. Linser stegt i smør.",
-        "lang": "",
-        "pris": "85",
-        "kategori": "vegetar"
-    }, {
-        "navn": "Paneer Makhani",
-        "billede": "paneer-makhani",
-        "kort": "Frisk hytteost i mild flødesovs.",
-        "lang": "",
-        "pris": "85",
-        "kategori": "vegetar"
-    }, {
-        "navn": "Saag Paneer",
-        "billede": "saag-paneer",
-        "kort": "Hytteost med spinat.",
-        "lang": "",
-        "pris": "85",
-        "kategori": "vegetar"
-    }, {
-        "navn": "Chana Masala",
-        "billede": "chana-masala",
-        "kort": "Kikærter tilberedt i vores krydret karrysauce.",
-        "lang": "",
-        "pris": "85",
-        "kategori": "vegetar"
-    }, {
-        "navn": "Ris",
-        "billede": "rice",
-        "kort": "Ekstra ris.",
-        "lang": "",
-        "pris": "29",
-        "kategori": "ekstra"
-    }, {
-        "navn": "Naan brød",
-        "billede": "naan",
-        "kort": "Tandooribrød med gær, smør, æg og hvedemel.",
-        "lang": "",
-        "pris": "30",
-        "kategori": "ekstra"
-    }, {
-        "navn": "Mango Chutney",
-        "billede": "mango-chutney",
-        "kort": "Sød mango chutney.",
-        "lang": "",
-        "pris": "15",
-        "kategori": "ekstra"
+        "pris": "65",
+        "kategori": "sweets"
     }
 ]
