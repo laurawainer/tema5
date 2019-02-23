@@ -1,0 +1,167 @@
+body {
+    margin: 0 auto;
+	background-color: #f9dee8;
+}
+
+h1,
+h2 {
+    font-family: 'Anton', sans-serif;
+
+}
+
+p {
+font-family: 'Gothic A1', sans-serif;
+}
+
+
+
+/*NAV*/
+
+nav {
+    height: 1.8rem;
+	width: 100%;
+	background-color: #41a8bd;
+	position: fixed;
+	text-align: center;
+	padding-top: 0.3rem;
+}
+
+nav a:hover{
+text-decoration: underline}
+
+nav a:last-child{
+	border: none;
+}
+
+nav a {
+	border-right: white solid 4px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Anton', sans-serif;
+	font-size: 1rem;
+    padding: 0 10px 0 10px ;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+/*COVER*/
+
+#cover img{
+	margin-top: 1.8rem;
+    width: 100%;
+    height: auto;
+	margin-bottom: 1.5rem;
+
+}
+
+/*MENU*/
+
+
+#retter {
+            display: grid;
+            grid-gap: 1vw;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .ret {
+            border: none;
+            background-color: white;
+            margin: 3vw;
+            padding: 20px;
+        }
+
+.menu {
+    display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+button {
+    margin: 5px;
+    background-color: #f9a8bd;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+	color: white;
+	font-family: 'Anton', sans-serif;
+	width: 4rem;
+
+}
+
+button:hover {
+    background-color: #41a8bd;
+
+}
+
+.valgt {
+    background-color: #41a8bd;
+}
+
+#popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #f9dee8;
+    border: none;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#indhold {
+    box-sizing: border-box;
+    background-color: #f9dee8;;
+    width: 60vw;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+
+#indhold img {
+    object-fit: contain;
+    width: 100%;
+    height: 300px;
+}
+
+#luk {
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#luk button {
+    font-size: 2em;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    margin-right: 15px;
+}
+
+#luk button:hover {
+    color: #41a8bd;
+}
+
+@media only screen and (min-width: 500px) {
+    #retter {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width:800px) {
+    #retter {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+
