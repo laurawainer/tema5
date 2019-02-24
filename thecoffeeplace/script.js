@@ -1,16 +1,23 @@
+let retter;
+
+let dest = document.querySelector("#retter");
+
+let filter = "alle";
+
+
 document.addEventListener("DOMContentLoaded", start);
-        let retter;
-
-        let dest = document.querySelector("#retter");
-
-        let filter = "alle";
 
         async function start() {
+
+
             const myJson = await fetch("retter.json");
             retter = await myJson.json();
             visRetter();
         }
         function visRetter() {
+
+
+
             dest.innerHTML = "";
             retter.forEach(ret => {
                 if (filter == "alle" || filter == ret.kategori) {
@@ -38,6 +45,9 @@ document.addEventListener("DOMContentLoaded", start);
                         document.querySelector("#popup #luk").addEventListener("click", close);
                     }
                     function close() {
+
+
+
                         document.querySelector("#popup").style.display = "none"
                     }
                 }
@@ -50,6 +60,7 @@ document.addEventListener("DOMContentLoaded", start);
         })
 
         function filtrering() {
+
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.classList.remove("valgt");
             })

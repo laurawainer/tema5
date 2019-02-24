@@ -6,6 +6,7 @@ body {
 h1,
 h2 {
     font-family: 'Anton', sans-serif;
+	text-transform: uppercase;
 
 }
 
@@ -151,17 +152,88 @@ button:hover {
     color: #41a8bd;
 }
 
+
+
+/*  CONTACT PAGE   */
+
+#kontakt {
+
+	max-width: 30rem;
+	margin: 0 auto;
+	padding: 1rem;
+	margin-bottom: 5rem
+
+}
+
+/*  CONTACT PAGE   */
+
+#om {
+
+	max-width: 30rem;
+	margin: 0 auto;
+	padding: 1rem;
+	margin-bottom: 5rem
+
+}
+
+/*FOOTER*/
+
+footer {
+	height: 10rem;
+display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	background-color: #41a8bd;
+	text-align: center;
+
+}
+
+footer .footer{
+	display: flex;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+}
+
+
+footer p:last-child{
+	border: none;
+}
+
+
+footer p {
+		align-self: center;
+
+	border-right: none;
+    color: white;
+    font-family: 'Anton', sans-serif;
+	font-size: 1rem;
+    padding: 0 10px 0 10px ;
+    text-transform: uppercase;
+}
+
+
+
+
 @media only screen and (min-width: 500px) {
     #retter {
         grid-template-columns: 1fr 1fr;
     }
+
+	footer p {
+		border-right: white solid 4px;
+	}
+
+	footer .footer{
+			flex-direction: row;
+
+	}
 }
 
 @media only screen and (min-width:800px) {
     #retter {
         grid-template-columns: 1fr 1fr 1fr;
+
     }
 }
-
-
-
