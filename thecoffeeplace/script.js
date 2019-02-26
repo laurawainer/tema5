@@ -1,4 +1,4 @@
-let retter;
+let retter = [];
 
 let dest = document.querySelector("#retter");
 
@@ -7,7 +7,9 @@ let filter = "alle";
 
 document.addEventListener("DOMContentLoaded", start);
 
-        async function start() {
+function start(){
+
+        async function getJson() {
 
 
             const myJson = await fetch("retter.json");
@@ -53,19 +55,22 @@ document.addEventListener("DOMContentLoaded", start);
                 }
             })
         }
-        start();
+
 
         document.querySelectorAll(".filter").forEach(elm => {
             elm.addEventListener("click", filtrering);
         })
 
         function filtrering() {
+			filter = this.getAttribute("data-kategori");
 
             document.querySelectorAll(".filter").forEach(elm => {
                 elm.classList.remove("valgt");
             })
             this.classList.add("valgt");
-            filter = this.getAttribute("data-ret");
+
 
 			visRetter();
         }
+	getJson();
+}
