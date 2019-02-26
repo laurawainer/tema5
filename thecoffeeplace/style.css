@@ -28,7 +28,7 @@ nav {
 }
 
 nav a:hover{
-text-decoration: underline}
+color: #f9a8bd }
 
 nav a:last-child{
 	border: none;
@@ -76,6 +76,10 @@ nav a {
             margin: 3vw;
             padding: 20px;
         }
+
+.ret:hover{
+	transform: scale(1.05);
+}
 
 .menu {
     display: flex;
